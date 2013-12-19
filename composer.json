@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Library for creating SEPA XML files",
     "keywords": ["sepa","banking"],
-    "homepage": "https://github.com/korpa/SepaXmlCreator",
+    "homepage": "https://github.com/korpa/sepa-xml-creator-php",
     "license": "GPL",
     "authors": [
         {
