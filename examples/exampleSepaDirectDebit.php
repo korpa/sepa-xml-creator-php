@@ -1,10 +1,4 @@
 <?php
-
-	// include SepaXmlCreator class
-	require_once '../src/SepaXmlCreator.class.php';
-
-
-
 	// create new instance
 	$creator = new \SepaXmlCreator\SepaXmlCreator();
 
