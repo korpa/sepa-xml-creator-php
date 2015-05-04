@@ -100,7 +100,7 @@ class SepaTransaction {
 class SepaXmlCreator {
 	var $transactions = array();
 
-	var $debitorName, $debitorIban, $debitorBic;
+	var $accountName, $accountIban, $accountBic;
 	var $offset = 0, $fixedDate;
 	var $currency = "EUR";
 
@@ -194,11 +194,11 @@ class SepaXmlCreator {
 		$creationTime = time();
 
 		// Msg-ID
-		$header->appendChild($dom->createElement('MsgId', $this->debitorBic . '00' . date('YmdHis', $creationTime)));
+		$header->appendChild($dom->createElement('MsgId', $this->accountBic . '00' . date('YmdHis', $creationTime)));
 		$header->appendChild($dom->createElement('CreDtTm', date('Y-m-d', $creationTime) . 'T' . date('H:i:s', $creationTime) . '.000Z'));
 		$header->appendChild($dom->createElement('NbOfTxs', count($this->transactions)));
 		$header->appendChild($initatorName = $dom->createElement('InitgPty'));
-		$initatorName->appendChild($dom->createElement('Nm', $this->debitorName));
+		$initatorName->appendChild($dom->createElement('Nm', $this->accountName));
 
 		// PaymentInfo
 		$paymentInfo = $dom->createElement('PmtInf');
